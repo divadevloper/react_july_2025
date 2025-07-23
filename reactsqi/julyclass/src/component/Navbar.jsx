@@ -16,6 +16,8 @@ const Navbar = () => {
     department: "software dept",
   });
 
+  const [fruit, setfruit] = useState(["Apple", "Mango", "Banana"]);
+
   let myname = "olamide";
   let year = new Date().getFullYear();
   return (
@@ -67,6 +69,15 @@ const Navbar = () => {
       <button onClick={() => setuser({ ...user, department: "UI/UX dept" })}>
         change department
       </button>
+      <div>
+        {fruit.map((item) => (
+          <div>
+            <li>{item}</li>
+          </div>
+        ))}
+      </div>
+
+      <button onClick={() => setfruit([...fruit, "Cherry"])}>add Fruit</button>
     </>
   );
 };
